@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Amoxicilina - MedlinePlus COBACH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Verdana, Geneva, sans-serif;
+      background: url('bb312f79-7971-4d69-b6f1-fa3f599508d9.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .farmacos-disponibles {
+      font-size: 1rem;
+    }
+
+    .contenido {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #003366;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .producto-imagen {
+      display: block;
+      margin: 1rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .precio {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #060;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .comprar {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .comprar button {
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .comprar button:hover {
+      background-color: #004c99;
+    }
+
+    .metodos-pago {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      background: #003366;
+      margin-top: 2rem;
+    }
+  body,td,th {
+	color: #000;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>MedlinePlus COBACH</h1>
+    </div>
+    <div class="farmacos-disponibles">
+      <strong>Fármacos disponibles</strong>
+    </div>
+  </header>
+
+  <div class="contenido">
+    <h1>Amoxicilina</h1>
+    <div class="precio">$75.00 pesos mexicanos</div>
+
+    <!-- ✅ Opciones de compra -->
+    <div class="comprar">
+      <button onclick="agregarAlCarrito()">Agregar al carrito 🛒</button>
+      <button onclick="comprarAhora()">Comprar ahora 💳</button>
+      <div class="metodos-pago">
+        Métodos de pago: Tarjeta de crédito, PayPal, OXXO
+      </div>
+    </div>
+
+    <p>La amoxicilina se usa para tratar ciertas infecciones causadas por bacterias, como neumonía, bronquitis (infección de las vías respiratorias que van a los pulmones) e infecciones de los oídos, la nariz, la garganta, las vías urinarias y la piel. También se usa en combinación con otros medicamentos para eliminar la <em>H. pylori</em>, una bacteria que provoca úlceras. La amoxicilina pertenece a una clase de medicamentos llamados antibióticos similares a la penicilina. Su acción consiste en detener el crecimiento de las bacterias.</p>
+
+    <img src="amsa_amoxacidclav_susp_200mg50ml.png" alt="Amoxicilina" class="producto-imagen">
+
+    <ul>
+      <li><strong>Adultos:</strong> Por lo general, se toma cada 12 horas (dos veces al día) o cada 8 horas (tres veces al día).</li>
+      <li><strong>Niños:</strong>Niños de menos de 40 kg: 25-50 mg/kg/día cada 8 horas. Faringoamigdalitis: 50 mg/kg/día en 2-3 dosis (7-10 días, 10 días en caso de S. pyogenes betahemolítico grupo A). <em>Dosis recomendada</em></li>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 2025 MedlinePlus COBACH - Foro y venta educativa
+  </footer>
+
+  <!-- ✅ Scripts de simulación -->
+  <script>
+    function agregarAlCarrito() {
+      alert("Producto agregado al carrito 🛒");
+    }
+
+    function comprarAhora() {
+      alert("Redirigiendo al pago... 💳");
+    }
+  </script>
+
+</body>
+</html>

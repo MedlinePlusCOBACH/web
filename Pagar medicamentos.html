@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tienda de Medicamentos</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      background: url('bb312f79-7971-4d69-b6f1-fa3f599508d9.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+    }
+
+    #header {
+      background-color: #003366;
+      color: #FFF;
+      padding: 1em;
+      text-align: center;
+    }
+
+    #header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    #container {
+      max-width: 960px;
+      margin: 2em auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 2em;
+    }
+
+    .seleccion {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    .seleccion select {
+      font-size: 1em;
+      padding: 0.5em;
+      border-radius: 6px;
+    }
+
+    .acciones {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .acciones button {
+      margin: 0.5em;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      background-color: #0066cc;
+      color: #FFF;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .acciones button:hover {
+      background-color: #004c99;
+    }
+
+    #carrito {
+      background-color: #eef5ff;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 2em;
+    }
+
+    #carrito ul {
+      padding-left: 1.5em;
+    }
+
+    #carrito li {
+      margin-bottom: 0.5em;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: right;
+      margin-top: 1em;
+    }
+
+    .metodos-pago {
+      text-align: center;
+      font-size: 0.9em;
+      color: #444;
+      margin-top: 1em;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: #FFF;
+      padding: 1em;
+      margin-top: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Tienda de Medicamentos</h1>
+  </div>
+
+  <div id="container">
+    <div class="seleccion">
+      <h2>Selecciona un medicamento</h2>
+      <select id="medicamento">
+        <option value="">-- Elige un fármaco --</option>
+        <option value="Paracetamol">Paracetamol - $30.00</option>
+        <option value="Ibuprofeno">Ibuprofeno - $75.00</option>
+        <option value="Omeprazol">Omeprazol - $50</option>
+        <option value="Amoxicilina">Amoxicilina - $75.00</option>
+        <option value="Dexametanosa">Dexametanosa - $100.00</option>
+        <option value="Naproxeno">Naproxeno - $50.00</option>
+        <option value="Ketamina">Ketamina - $495.00</option>
+      </select>
+
+      <div class="acciones">
+        <button onclick="agregarAlCarrito()">Agregar al carrito 🛒</button>
+        <button onclick="comprarAhora()">Comprar ahora 💳</button>
+      </div>
+
+      <div class="metodos-pago">
+        Métodos de pago: Tarjeta, PayPal, OXXO
+      </div>
+    </div>
+
+    <div id="carrito">
+      <h3>🛒 Carrito de Compras</h3>
+      <ul id="lista-carrito"></ul>
+      <div class="total" id="total">Total: $0</div>
+      <div class="acciones">
+        <button onclick="procesarPago()">Proceder al pago</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MedlinePlus COBACH - Foro y venta educativa
+  </footer>
+
+  <script type="text/javascript">
+    var carrito = [];
+    var precios = {
+      "Paracetamol": 30.00,
+      "Ibuprofeno": 75.00,
+      "Omeprazol": 50.00,
+      "Amoxicilina": 75.00,
+	  "Dexametanosa": 100.00,
+	  "Naproxeno": 50.00,
+	  "Ketamina": 495.00
+    };
+
+    function agregarAlCarrito() {
+      var select = document.getElementById("medicamento");
+      var producto = select.value;
+      if (producto !== "") {
+        carrito.push(producto);
+        actualizarCarrito();
+        alert(producto + " agregado al carrito.");
+      } else {
+        alert("Por favor selecciona un medicamento.");
+      }
+    }
+
+    function actualizarCarrito() {
+      var lista = document.getElementById("lista-carrito");
+      lista.innerHTML = "";
+      var conteo = {};
+      var total = 0;
+
+      for (var i = 0; i < carrito.length; i++) {
+        var item = carrito[i];
+        if (conteo[item]) {
+          conteo[item]++;
+        } else {
+          conteo[item] = 1;
+        }
+      }
+
+      for (var nombre in conteo) {
+        var cantidad = conteo[nombre];
+        var subtotal = precios[nombre] * cantidad;
+        total += subtotal;
+
+        var li = document.createElement("li");
+        li.textContent = nombre + " x" + cantidad + " - $" + subtotal;
+        lista.appendChild(li);
+      }
+
+      document.getElementById("total").textContent = "Total: $" + total;
+    }
+
+    function comprarAhora() {
+      var select = document.getElementById("medicamento");
+      var producto = select.value;
+      if (producto !== "") {
+        alert("Redirigiendo para comprar: " + producto + " - $" + precios[producto]);
+      } else {
+        alert("Selecciona un medicamento para comprar.");
+      }
+    }
+
+    function procesarPago() {
+      if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+
+      var total = carrito.reduce(function (sum, producto) {
+        return sum + precios[producto];
+      }, 0);
+
+      alert("Procesando pago por $" + total + ". Gracias por tu compra.");
+    }
+  </script>
+</body>
+</html>

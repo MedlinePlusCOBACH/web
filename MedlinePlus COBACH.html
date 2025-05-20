@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Colegio de Bachilleres del Estado de Chihuahua -->
+<!-- Plantel No. 6 -->
+<!-- Proyecto Páginas Web -->
+<!-- Molina Lucero Julio Ariel -->
+<!-- Guerrero Cruz Cinthya Zuzeth -->
+<!-- 672 -->
+<!-- MedlinePlus COBACH -->
+
+<!-- Interfaz de la página -->
+  <meta charset="utf-8">
+  <title>MedlinePlus COBACH</title>
+  <style>
+    body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-size: cover;
+	margin-left: 0px;
+	margin-right: 0px;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: right;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+	
+	.logo img {
+      width: 480px;
+    }
+    form input {
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    form button {
+      padding: 0.4rem 1rem;
+      background: #00aa66;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #usuario-logueado {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    #usuario-logueado button {
+      background: #aa0000;
+    }
+	
+    main {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+  	   background: white;
+  	   border-radius: 10px;
+  	   padding: 1.5rem;
+  	   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  	   transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.card:hover {
+  	   transform: translateY(-10px);
+  	   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	}
+
+    .card h2 {
+      color: #003366;
+	  transform: scale(1.02);
+    }
+
+    .card a {
+      color: #0077cc;
+    }
+	
+	.card p, .card a {
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #0055aa;
+      color: white;
+      border-radius: 5px;
+      margin-top: 1rem;
+      text-decoration: none;
+	}
+
+	footer {
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      background: #003366;
+      margin-top: 2rem;
+    }
+	
+	
+  h2 {
+	color: #036;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Parte superior-->
+  <header>
+    <div class="logo">
+      <body>
+<div align="center">
+  <h4><img src="m_logo_primary_25_sp (1).png" width="480" height="67" alt="Medline"></h4>
+    </div>
+    
+    <div id="login-area">
+      <form id="loginForm" onsubmit="return iniciarSesion()" style="display: flex; gap: 0.5rem; align-items: rigth;">
+        <div align="right">
+          <input type="text" id="usuario" placeholder="Usuario" required>
+          <input type="password" id="contrasena" placeholder="Contraseña" required>
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="usuario-logueado">
+      <span id="mensaje-bienvenida">¡Bienvenido!</span>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </div>
+  </header>
+<p>
+
+<!-- Interfaz por sección de cards -->  
+<div class="grid-container">
+</p>
+<p>&nbsp;
+  </p>
+<h2 align="center"><marquee>¡Bienvenido a MedlinePlus COBACH!</marquee></h2>
+<p><marquee>
+  </marquee>
+</p>
+ <main>
+    <div class="card">
+      <h2 align="center">¿Quiénes somos?</h2>
+      <p>Este es un sitio web creado por alumnos de Colegio de Bachilleres del Estado de Chihuahua, este sitio web se hace para dar informacion sobre varios medicamentos, ya que no contamos aun con los conocimientos necesarios para poder recetar ni recomendar, y si quieres puedes acceder al sitio web que dejamos a continuacion "MedlinePlus" 
+
+MedlinePlus es un servicio informativo en línea de salud para pacientes, familiares y amigos. Es producida por la Biblioteca Nacional de Medicina de Estados Unidos (NLM, por sus siglas en inglés), la biblioteca médica más grande del mundo y parte de los Institutos Nacionales de la Salud de EE. UU. (NIH). 
+
+Nuestra misión es brindar información de calidad y relevante de salud y bienestar que sea confiable, fácil de entender y sin publicidad en inglés y español; sin costo y accesible en cualquier lugar, tiempo y dispositivo. Más en <a href="https://medlineplus.gov/spanish/acercade/" target="_blank">MedlinePlus</a>.</p>
+    </div>
+
+<div class="card">
+<h2 align="center">Conoce más sobre los medicamentos</h2>
+      <p>Los medicamentos pueden tratar enfermedades y mejorar su salud. Si es como la mayoría de las personas, seguramente ha tomado un medicamento en algún momento de su vida. Es posible que deba tomar medicamentos todos los días o que solo necesite tomar medicamentos de vez en cuando. De cualquier manera, debe asegurarse de que sus medicamentos sean seguros y que lo ayudarán a mejorar. En los Estados Unidos, la Administración de Alimentos y Medicamentos (FDA, por sus siglas en inglés) está a cargo de garantizar la seguridad y efectividad de medicinas con y sin receta.</p>
+      <p>Siempre hay riesgos al tomar medicamentos. Es importante pensar en estos riesgos antes de tomarlos. Incluso los medicamentos seguros pueden causar efectos secundarios no deseados o interacciones con alimentos, alcohol u otros medicamentos que esté tomando. Es posible que algunos medicamentos no sean seguros durante el embarazo. Para reducir el riesgo de reacciones y asegurarse que lo va a ayudar a sentirse mejor, es importante que tome sus medicamentos en forma correcta. También debe tener cuidado al administrar medicamentos a los niños, ya que pueden ser más sensibles a sus efectos.</p>
+
+
+</div>
+
+<div class="card">
+  <h2 align="center">Enciclopedia médica</h2>
+  <p>La Enciclopedia Ilustrada de Salud (Health Illustrated Encyclopedia) de A.D.A.M. incluye más de 4.000 artículos acerca de enfermedades, exámenes, síntomas, lesiones y procedimientos quirúrgicos. También contiene una biblioteca extensa de fotografías médicas e ilustraciones. Para más información acerca de A.D.A.M., vea el <a target="TheNewWin" href="http://www.adam.com/editorialGuidelines.aspx">directorio de contenidos</a> (en inglés).</p>
+<p align="center">La información del link contenida no debe utilizarse durante ninguna emergencia médica, ni para el diagnóstico o tratamiento de alguna afección médica. Debe consultarse a un médico con licencia para el diagnóstico y tratamiento de todas y cada una de las afecciones médicas. En caso de una emergencia médica, llame al 911. Los enlaces a otros sitios se proporcionan sólo con fines de información, no significa que se les apruebe. © 1997-2025 A.D.A.M., Inc. La duplicación para uso comercial debe ser autorizada por escrito por ADAM Health Solutions.</p>
+
+</div>
+    
+<div class="card">
+      <h2 align="center">Clasificación de medicamentos</h2>
+      <p>Los medicamentos se clasifican por su función, hacer clic <a href="Clasificación de los medicamentos.html">"clasificacion de medicamentos"</a>.</p>
+
+</div>
+    
+<div class="card">
+      <h2 align="center">Venta de Medicamentos</h2>
+      <p>Ofrecemos medicamentos de calidad para distintas condiciones. Consulta productos disponibles, <a href="UntitledFrameset-11.html">Tienda de Medicamentos</a></p>
+      <p>Si quieres saber más información de los precios, <a href="Precios de los medicamentos.html">consulta aquí</a></p>
+  </div>
+  
+<div class="card">
+    <h2 align="center">Contáctanos</h2>
+    <blockquote>
+      <p>Nuestro correo electrónico: medlinepluscobach@gmail.com</p>
+      <p>Número telefónico: 656 850 1491</p>
+      <p>Nos ubicamos en: Víctor Hugo 9304, Campos Elíseos, 32472 Juárez, Chih.</p>
+    </blockquote>
+   </div>
+  
+  <div class="card">
+    <h2 align="center">Redes sociales</h2>
+    <blockquote>
+      <p>Facebook:  <a href="https://www.facebook.com/medlineplusenespanol/?locale=es_LA">MedlinePlus en español</a></p>
+      <p>Instragram:  <a href="https://www.instagram.com/medlineplusenespanol/?hl=es">@medlineplusenespañol </a></p>
+      <p>X (anteriormente Twitter):  <a href="https://x.com/NLM_NIH">National Library of Medicine</a></p>
+      <p>YouTube:  <a href="https://www.youtube.com/@NLMNIH">Nacional Library of Medicine</a></p>
+<p>&nbsp;</p>
+    </blockquote>
+   </div>
+
+<div class="card">
+	<blockquote>
+    <h2 align="center">Fabricación de fármacos</h2>
+    <h2 align="center"><a href="https://www.youtube.com/watch?v=9C2TWLA1JaI"><img src="Imagen laboratorio.jpg" width="288" height="241" alt="Laboratorio"></a></h2>
+    </blockquote>
+   </div>
+</main>  
+
+<!-- Derechos de autor y actualizaciones -->
+  <footer>
+    <p>&copy; 2025 MedlinePlus COBACH. Foro educativo.    </p>
+    <p> Todos los derechos reversados
+    <p>Ultima vez consultada la página: 
+      <!-- #BeginDate format:Am3a -->05/18/2025 4:38 PM<!-- #EndDate -->
+    </p>
+  </footer>   
+
+<!-- Esto es para iniciar y cerrar sesión de la página código script -->
+<script>
+    function iniciarSesion() {
+      const user = document.getElementById("usuario").value;
+      const pass = document.getElementById("contrasena").value;
+
+      if (user && pass) {
+        document.getElementById("login-area").style.display = "none";
+        document.getElementById("usuario-logueado").style.display = "flex";
+        document.getElementById("mensaje-bienvenida").textContent = `¡Bienvenid@, ${user}!`;
+      } else {
+        alert("Por favor, llena ambos campos.");
+      }
+
+      return false;
+    }
+
+    function cerrarSesion() {
+      document.getElementById("login-area").style.display = "flex";
+      document.getElementById("usuario-logueado").style.display = "none";
+      document.getElementById("loginForm").reset();
+    }
+  </script>
+
+</body>
+</html>
